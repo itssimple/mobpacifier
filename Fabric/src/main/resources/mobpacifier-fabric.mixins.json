@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "se.itssimple.mobpacifier.fabric.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "RangedBowAttackGoalMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
