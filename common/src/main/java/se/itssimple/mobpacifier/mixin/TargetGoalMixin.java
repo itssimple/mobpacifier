@@ -16,7 +16,7 @@ abstract class TargetGoalMixin {
     @Shadow
     protected @Final Mob mob;
 
-    @Inject(method = "canContinueToUse", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "canContinueToUse()Z", at = @At("HEAD"), cancellable = true)
     public void preventTargeting(CallbackInfoReturnable<Boolean> cir) {
         TargetGoal goal = (TargetGoal) (Object) this;
         LivingEntity target = mob.getTarget();
@@ -28,5 +28,4 @@ abstract class TargetGoalMixin {
             cir.setReturnValue(false);
         }
     }
-
 }
