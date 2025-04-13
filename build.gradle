@@ -2,23 +2,5 @@ plugins {
     id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
     id 'fabric-loom' version '1.9-SNAPSHOT' apply(false)
     id 'net.neoforged.moddev.legacyforge' version '2.0.77' apply(false)
-    id "io.github.pacifistmc.forgix" version "1.2.9"
-}
-
-forgix {
-    group = "${group}"
-    mergedJarName = "${mod_id}-${minecraft_version}-${version}-ml.jar"
-
-    fabric {
-        jarLocation = "build/libs/${mod_id}-fabric-${minecraft_version}-${version}.jar"
-    }
-
-    forge {
-        jarLocation = "build/libs/${mod_id}-forge-${minecraft_version}-${version}.jar"
-    }
-}
-
-subprojects {
-    //build.finalizedBy(mergeJars)
-    //assemble.finalizedBy(mergeJars)
+    id 'curseforge-common'
 }

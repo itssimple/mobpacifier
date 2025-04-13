@@ -7,4 +7,5 @@ import se.itssimple.mobpacifier.util.Reference;
 public class Constants
 {
     public static final Logger LOG = LoggerFactory.getLogger(Reference.NAME);
+    public static final int DEFAULT_DURABILITY = 60;
 }

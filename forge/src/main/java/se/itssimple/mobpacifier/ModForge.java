@@ -8,13 +8,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(Reference.MOD_ID)
 public class ModForge {
 
-	public ModForge(FMLJavaModLoadingContext modLoadingContext) {
+	public ModForge() {
 		ModCommon.init();
-		IEventBus modEventBus = modLoadingContext.getModEventBus();
-		modEventBus.addListener(this::loadComplete);
-	}
-
-	private void loadComplete(final FMLLoadCompleteEvent event) {
-		
 	}
 }

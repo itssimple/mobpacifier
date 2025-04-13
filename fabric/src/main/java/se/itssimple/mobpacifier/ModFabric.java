@@ -6,11 +6,5 @@ public class ModFabric implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModCommon.init();
-
-		loadEvents();
-	}
-
-	private void loadEvents() {
-		
 	}
 }
