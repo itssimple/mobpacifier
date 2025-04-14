@@ -1,5 +1,5 @@
 package se.itssimple.mobpacifier.mixin;
-
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.target.TargetGoal;
@@ -11,6 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static se.itssimple.mobpacifier.ModCommon.PACIFIED_MOBS;
+
 @Mixin(TargetGoal.class)
 abstract class TargetGoalMixin {
     @Shadow
@@ -20,6 +22,12 @@ abstract class TargetGoalMixin {
     public void preventTargeting(CallbackInfoReturnable<Boolean> cir) {
         TargetGoal goal = (TargetGoal) (Object) this;
         LivingEntity target = mob.getTarget();
+
+        EntityType<?> mobType = mob.getType();
+
+        if(mobType.is(PACIFIED_MOBS)) {
+
+        }
 
         if (target != null && target.getOffhandItem().getItem() == Items.ROTTEN_FLESH) {
             mob.setTarget(null);
