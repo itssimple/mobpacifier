@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static se.itssimple.mobpacifier.ModCommon.PACIFIED_MOBS;
 
 @Mixin(TargetGoal.class)
 abstract class TargetGoalMixin {
@@ -25,10 +24,8 @@ abstract class TargetGoalMixin {
 
         EntityType<?> mobType = mob.getType();
 
-        if(mobType.is(PACIFIED_MOBS)) {
 
-        }
-
+        // We'll leave this as a fallback in case that we haven't encountered anything specific configured for the mob type.
         if (target != null && target.getOffhandItem().getItem() == Items.ROTTEN_FLESH) {
             mob.setTarget(null);
             mob.setAggressive(false);
